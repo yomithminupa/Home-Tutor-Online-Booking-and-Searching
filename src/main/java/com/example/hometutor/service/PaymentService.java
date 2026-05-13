@@ -1,0 +1,47 @@
+package com.example.hometutor.service;
+
+import com.example.hometutor.model.CardPayment;
+import com.example.hometutor.model.CashPayment;
+import com.example.hometutor.model.Payment;
+import com.example.hometutor.repository.PaymentRepository;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.Locale;
+
+@Service
+public class PaymentService extends AbstractCrudService<Payment> {
+
+    public PaymentService(PaymentRepository paymentRepository) {
+        super(paymentRepository);
+    }
+
+    public Payment buildPayment(String id, String bookingId, String userId, double amount, String paymentDate,
+                                String status, String paymentType, String cardHolderName, String maskedCardNumber,
+                                String authorizationCode, String collectedBy, String receiptNumber) {
+        if ("CASH".equalsIgnoreCase(paymentType)) {
+            return new CashPayment(id, bookingId, userId, amount, paymentDate, status, collectedBy, receiptNumber);
+        }
+        return new CardPayment(id, bookingId, userId, amount, paymentDate, status,
+                cardHolderName, maskedCardNumber, authorizationCode);
+    }
+
+    @Override
+    public List<Payment> search(String keyword) {
+        if (keyword == null || keyword.isBlank()) {
+            return findAll();
+        }
+        String query = keyword.toLowerCase(Locale.ROOT);
+        return findAll().stream()
+                .filter(payment -> contains(payment.getId(), query)
+                        || contains(payment.getBookingId(), query)
+                        || contains(payment.getUserId(), query)
+                        || contains(payment.getStatus(), query)
+                        || contains(payment.getPaymentMethod(), query))
+                .toList();
+    }
+
+    private static boolean contains(String value, String query) {
+        return value != null && value.toLowerCase(Locale.ROOT).contains(query);
+    }
+}

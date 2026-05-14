@@ -14,4 +14,5 @@ import org.springframework.web.bind.annotation.RequestParam;
 @RequestMapping("/reviews")
 
 public class ReviewController {
+    private final ReviewService reviewService;
 }

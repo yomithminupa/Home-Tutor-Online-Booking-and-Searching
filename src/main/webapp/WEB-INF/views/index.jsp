@@ -60,37 +60,4 @@
     </article>
 </section>
 
-<section class="quick-panel">
-    <div class="section-title">
-        <h3>Quick Actions</h3>
-        <p class="muted">Jump straight into the main workflow.</p>
-    </div>
-    <div class="quick-grid">
-        <a class="quick-tile" href="/users/new">
-            <span>🧑‍🎓</span>
-            <strong>Add User</strong>
-        </a>
-        <a class="quick-tile" href="/tutors/new">
-            <span>🏆</span>
-            <strong>Add Tutor</strong>
-        </a>
-        <a class="quick-tile" href="/subjects/new">
-            <span>📖</span>
-            <strong>Add Subject</strong>
-        </a>
-        <a class="quick-tile" href="/bookings/new">
-            <span>🗓️</span>
-            <strong>Book Lesson</strong>
-        </a>
-        <a class="quick-tile" href="/payments/new">
-            <span>💰</span>
-            <strong>Add Payment</strong>
-        </a>
-        <a class="quick-tile" href="/reviews/new">
-            <span>🌟</span>
-            <strong>Add Review</strong>
-        </a>
-    </div>
-</section>
-
 <%@ include file="fragments/footer.jsp" %>

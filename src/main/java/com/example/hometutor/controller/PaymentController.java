@@ -15,12 +15,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 @RequestMapping("/payments")
 //create a class
 public class PaymentController {
-//attribute
-private final PaymentService paymentService;
-//constructor
-public PaymentController(PaymentService paymentService) {
-    this.paymentService = paymentService;
-}
+    //attribute
+    private final PaymentService paymentService;
+
+    //constructor
+    public PaymentController(PaymentService paymentService) {
+        this.paymentService = paymentService;
+    }
+
     //  manage the payments with search, create, update, and delete
     @GetMapping
     public String list(@RequestParam(required = false) String keyword, Model model) {

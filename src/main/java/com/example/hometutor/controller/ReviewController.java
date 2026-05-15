@@ -63,7 +63,15 @@ public class ReviewController {
         reviewService.delete(id);
         return "redirect:/reviews";
     }
-
+// create method
+private int parseInt(String value) {
+    try {
+        int number = Integer.parseInt(value);
+        return Math.max(1, Math.min(5, number));
+    } catch (Exception e) {
+        return 1;
+    }
+}
 
 
 

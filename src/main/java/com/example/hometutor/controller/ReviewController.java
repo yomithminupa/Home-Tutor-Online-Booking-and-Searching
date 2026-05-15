@@ -1,6 +1,5 @@
 package com.example.hometutor.controller;
 
-import com.example.hometutor.model.Review;
 import com.example.hometutor.service.ReviewService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

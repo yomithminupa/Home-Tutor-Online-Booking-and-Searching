@@ -1,6 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="com.example.hometutor.model.*" %>
-<%
+<% 
     Tutor tutor = (Tutor) request.getAttribute("tutor");
     boolean edit = tutor != null;
     String type = edit ? tutor.getTutorType() : "ONLINE";

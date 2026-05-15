@@ -31,7 +31,8 @@ public abstract class Review implements IdentifiableEntity {
     @Column(length = 1000)
     private String comment;
 
-    //defau
+    //default constructor
+
 
 
 

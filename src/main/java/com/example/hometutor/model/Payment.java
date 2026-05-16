@@ -14,3 +14,14 @@ import jakarta.persistence.Table;
 @Table(name = "payments")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "payment_type", discriminatorType = DiscriminatorType.STRING)
+//create a class
+public abstract class Payment implements IdentifiableEntity{
+
+
+
+
+
+
+
+
+}

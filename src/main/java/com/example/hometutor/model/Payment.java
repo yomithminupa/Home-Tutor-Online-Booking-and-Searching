@@ -48,11 +48,61 @@ public abstract String getPaymentMethod();
     public String getReceiptSummary() {
         return getPaymentMethod() + " payment of Rs. " + amount + " for booking " + bookingId;
     }
+//getters and setters methods overriding
+@Override
+public String getId() {
 
+        return id;
+}
 
+    public void setId(String id) {
 
+        this.id = id;
+    }
 
+    public String getBookingId() {
 
+        return bookingId;
+    }
 
+    public void setBookingId(String bookingId) {
+
+        this.bookingId = bookingId;
+    }
+
+    public String getUserId() {
+
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+
+        this.userId = userId;
+    }
+
+    public double getAmount() {
+
+        return amount;
+    }
+
+    public void setAmount(double amount) {
+
+        this.amount = amount;
+    }
+
+    public String getPaymentDate() {
+
+        return paymentDate;
+    }
+
+    public void setPaymentDate(String paymentDate) {
+
+        this.paymentDate = paymentDate;
+    }
+
+    public String getStatus() {
+
+        return status;
+    }
 
 }

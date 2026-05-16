@@ -13,7 +13,8 @@ public class CardPayment extends Payment{
     private String maskedCardNumber;
     private String authorizationCode;
 
-
+    public CardPayment() {
+    }
 
 
 

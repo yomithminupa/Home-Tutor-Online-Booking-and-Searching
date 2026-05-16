@@ -11,8 +11,11 @@ public class PublicReview extends Review {
 //default constructor
 public PublicReview() {
 }
-//
-
+//parametrize constructor
+public PublicReview(String id, String tutorId, String userId, int rating, String comment, String nickname) {
+    super(id, tutorId, userId, rating, comment);
+    this.nickname = nickname;
+}
 
 
 

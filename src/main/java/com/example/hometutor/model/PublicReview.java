@@ -9,6 +9,8 @@ public class PublicReview extends Review {
    //attributes
    private String nickname;
 //default constructor
+public PublicReview() {
+}
 
 
 

@@ -16,8 +16,29 @@ public PublicReview(String id, String tutorId, String userId, int rating, String
     super(id, tutorId, userId, rating, comment);
     this.nickname = nickname;
 }
+//method overriding ,getters and setters
+@Override
+public String getReviewType() {
 
+    return "PUBLIC";
+}
 
+    @Override
+    public String displayReview() {
+
+    return nickname + ": " + super.displayReview();
+    }
+
+    public String getNickname() {
+
+    return nickname;
+    }
+
+    public void setNickname(String nickname) {
+
+    this.nickname = nickname;
+    }
+}
 
 
 

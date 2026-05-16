@@ -12,7 +12,7 @@ public class VerifiedReview extends Review {
     //attributes
     private String bookingId;
 
-    //default constructoru
+    //default constructor
     public VerifiedReview() {
     }
 

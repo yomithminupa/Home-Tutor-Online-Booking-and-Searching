@@ -60,7 +60,6 @@ public class CardPayment extends Payment{
         this.authorizationCode = authorizationCode;
     }
 }
-ggk
 
 
 

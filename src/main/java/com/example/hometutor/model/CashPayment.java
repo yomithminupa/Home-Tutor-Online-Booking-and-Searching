@@ -50,11 +50,3 @@ public class CashPayment extends Payment {
         this.receiptNumber = receiptNumber;
     }
 }
-
-
-
-
-
-
-
-}

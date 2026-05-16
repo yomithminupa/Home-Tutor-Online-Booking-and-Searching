@@ -50,7 +50,7 @@ public abstract class Review implements IdentifiableEntity {
 
     return rating + "/5 - " + comment;
   }
-//getter & setters
+//getter & setters with methods
   @Override
   public String getId() {
 

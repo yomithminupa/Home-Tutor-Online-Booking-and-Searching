@@ -15,10 +15,10 @@ import jakarta.persistence.Table;
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "payment_type", discriminatorType = DiscriminatorType.STRING)
 //create a class
-public abstract class Payment implements IdentifiableEntity{
-//attributes
-@Id
-private String id;
+public abstract class Payment implements IdentifiableEntity {
+    //attributes
+    @Id
+    private String id;
 
     @Column(nullable = false)
     private String bookingId;
@@ -33,27 +33,30 @@ private String id;
 
     protected Payment() {
     }
-//parameterize constructor
-protected Payment(String id, String bookingId, String userId, double amount, String paymentDate, String status) {
-    this.id = id;
-    this.bookingId = bookingId;
-    this.userId = userId;
-    this.amount = amount;
-    this.paymentDate = paymentDate;
-    this.status = status;
-}
-//methods
-public abstract String getPaymentMethod();
+
+    //parameterize constructor
+    protected Payment(String id, String bookingId, String userId, double amount, String paymentDate, String status) {
+        this.id = id;
+        this.bookingId = bookingId;
+        this.userId = userId;
+        this.amount = amount;
+        this.paymentDate = paymentDate;
+        this.status = status;
+    }
+
+    //methods
+    public abstract String getPaymentMethod();
 
     public String getReceiptSummary() {
         return getPaymentMethod() + " payment of Rs. " + amount + " for booking " + bookingId;
     }
-//getters and setters methods overriding
-@Override
-public String getId() {
+
+    //getters and setters methods overriding
+    @Override
+    public String getId() {
 
         return id;
-}
+    }
 
     public void setId(String id) {
 

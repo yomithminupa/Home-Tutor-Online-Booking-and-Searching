@@ -16,7 +16,7 @@ public class VerifiedReview extends Review {
     public VerifiedReview() {
     }
 
-    //parameterize constructoru
+    //parameterize constructor
     public VerifiedReview(String id, String tutorId, String userId, int rating, String comment, String bookingId) {
         super(id, tutorId, userId, rating, comment);
         this.bookingId = bookingId;

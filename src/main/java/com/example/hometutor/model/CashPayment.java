@@ -14,6 +14,7 @@ public class CashPayment extends Payment {
     //default constructor
     public CashPayment() {
     }
+
     //parameterize constructor
     public CashPayment(String id, String bookingId, String userId, double amount, String paymentDate, String status,
                        String collectedBy, String receiptNumber) {
@@ -21,6 +22,7 @@ public class CashPayment extends Payment {
         this.collectedBy = collectedBy;
         this.receiptNumber = receiptNumber;
     }
+
     //getters and setters , method overriding
     @Override
     public String getPaymentMethod() {

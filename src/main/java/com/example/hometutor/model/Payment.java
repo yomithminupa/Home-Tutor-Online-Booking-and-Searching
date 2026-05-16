@@ -16,7 +16,32 @@ import jakarta.persistence.Table;
 @DiscriminatorColumn(name = "payment_type", discriminatorType = DiscriminatorType.STRING)
 //create a class
 public abstract class Payment implements IdentifiableEntity{
+//attributes
+@Id
+private String id;
 
+    @Column(nullable = false)
+    private String bookingId;
+
+    @Column(nullable = false)
+    private String userId;
+
+    private double amount;
+    private String paymentDate;
+    private String status;
+    //default constructor
+
+    protected Payment() {
+    }
+//parameterize constructor
+protected Payment(String id, String bookingId, String userId, double amount, String paymentDate, String status) {
+    this.id = id;
+    this.bookingId = bookingId;
+    this.userId = userId;
+    this.amount = amount;
+    this.paymentDate = paymentDate;
+    this.status = status;
+}
 
 
 

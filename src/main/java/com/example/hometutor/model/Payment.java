@@ -42,6 +42,12 @@ protected Payment(String id, String bookingId, String userId, double amount, Str
     this.paymentDate = paymentDate;
     this.status = status;
 }
+//methods
+public abstract String getPaymentMethod();
+
+    public String getReceiptSummary() {
+        return getPaymentMethod() + " payment of Rs. " + amount + " for booking " + bookingId;
+    }
 
 
 

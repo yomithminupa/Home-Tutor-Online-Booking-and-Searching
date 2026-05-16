@@ -11,6 +11,7 @@ public class CashPayment extends Payment {
     //attributes
     private String collectedBy;
     private String receiptNumber;
+
     //default constructor
     public CashPayment() {
     }

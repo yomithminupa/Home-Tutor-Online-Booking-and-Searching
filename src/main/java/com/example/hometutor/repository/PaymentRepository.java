@@ -6,5 +6,4 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 //create a class
 public interface PaymentRepository extends JpaRepository<Payment, String> {
-
 }

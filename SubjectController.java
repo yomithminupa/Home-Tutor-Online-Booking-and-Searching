@@ -31,6 +31,7 @@ public class SubjectController {
         return "subject-form";
     }
 
+    // Handles subject creation requests
     @PostMapping
     public String create(@RequestParam String category, @RequestParam String id, @RequestParam String name,
                          @RequestParam String gradeLevel, @RequestParam String description,

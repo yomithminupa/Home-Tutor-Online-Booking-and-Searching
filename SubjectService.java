@@ -27,9 +27,10 @@ public class SubjectService extends AbstractCrudService<Subject> {
     }
 
     @Override
+    
     public List<Subject> search(String keyword) {
         if (keyword == null || keyword.isBlank()) {
-            return findAll();
+            return  findAll();
         }
         String query = keyword.toLowerCase(Locale.ROOT);
         return findAll().stream()
@@ -37,10 +38,12 @@ public class SubjectService extends AbstractCrudService<Subject> {
                         || contains(subject.getName(), query)
                         || contains(subject.getGradeLevel(), query)
                         || contains(subject.getCategory(), query))
-                .toList();
+                 .toList();
     }
 
     private static boolean contains(String value, String query) {
+        
         return value != null && value.toLowerCase(Locale.ROOT).contains(query);
+        
     }
 }

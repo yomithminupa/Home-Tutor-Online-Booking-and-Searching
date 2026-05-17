@@ -11,10 +11,10 @@
     }
 %>
 <%@ include file="fragments/header.jsp" %>
-
+ 
 <section class="page-head">
     <div>
-        <h2>Subject Management</h2>
+       <h2>Subject Management</h2>
         <p class="muted">Manage subjects and tuition categories.</p>
     </div>
     <a class="btn" href="/subjects/new">Add Subject</a>
@@ -26,7 +26,7 @@
     <a class="btn light" href="/subjects">Clear</a>
 </form>
 
-<div class="table-wrap">
+ <div class="table-wrap">
     <table>
         <thead>
         <tr>
@@ -55,10 +55,10 @@
             </tr>
         <% } %>
         <% if (subjects.isEmpty()) { %>
-            <tr><td colspan="7">No subjects found.</td></tr>
+            <tr><td colspan = "7">No subjects found.</td></tr>
         <% } %>
         </tbody>
     </table>
 </div>
 
-<%@ include file="fragments/footer.jsp" %>
+<%@ include file = "fragments/footer.jsp" %>

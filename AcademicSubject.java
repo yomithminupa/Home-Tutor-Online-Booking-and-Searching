@@ -5,6 +5,8 @@ import jakarta.persistence.Entity;
 
 @Entity
 @DiscriminatorValue("ACADEMIC")
+
+// Academic subject category implementation    
 public class AcademicSubject extends Subject {
     private String stream;
 
@@ -16,6 +18,7 @@ public class AcademicSubject extends Subject {
         this.stream = stream;
     }
 
+
     @Override
     public String getCategory() {
         return "ACADEMIC";
@@ -23,7 +26,7 @@ public class AcademicSubject extends Subject {
 
     @Override
     public String displaySubject() {
-        return getName() + " - " + stream + " stream";
+        return  getName() + " - " + stream + " stream";
     }
 
     public String getStream() {

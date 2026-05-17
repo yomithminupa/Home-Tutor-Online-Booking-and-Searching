@@ -13,7 +13,11 @@ import java.util.Locale;
 @Service
 //create a class
 public class PaymentService extends AbstractCrudService<Payment> {
+    //parameterize constructor
+    public PaymentService(PaymentRepository paymentRepository) {
 
+        super(paymentRepository);
+    }
     //method
     public Payment buildPayment(String id, String bookingId, String userId, double amount, String paymentDate,
                                 String status, String paymentType, String cardHolderName, String maskedCardNumber,
@@ -24,6 +28,7 @@ public class PaymentService extends AbstractCrudService<Payment> {
         return new CardPayment(id, bookingId, userId, amount, paymentDate, status,
                 cardHolderName, maskedCardNumber, authorizationCode);
     }
+
     @Override
     public List<Payment> search(String keyword) {
         if (keyword == null || keyword.isBlank()) {

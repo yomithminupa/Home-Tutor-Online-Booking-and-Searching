@@ -9,3 +9,24 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Locale;
+
+@Service
+//create a class
+public class ReviewService extends AbstractCrudService<Review> {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}

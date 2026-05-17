@@ -26,7 +26,7 @@ public ReviewService(ReviewRepository reviewRepository) {
         }
         return new PublicReview(id, tutorId, userId, rating, comment, nickname);
     }
-    //method overriding'l
+    //method overridingk
     @Override
     public List<Review> search(String keyword) {
         if (keyword == null || keyword.isBlank()) {

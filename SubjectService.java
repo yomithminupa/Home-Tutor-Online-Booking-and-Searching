@@ -10,6 +10,8 @@ import java.util.List;
 import java.util.Locale;
 
 @Service
+
+// subjectService category implementation    
 public class SubjectService extends AbstractCrudService<Subject> {
 
     public SubjectService(SubjectRepository subjectRepository) {

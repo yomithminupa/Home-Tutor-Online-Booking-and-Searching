@@ -3,7 +3,9 @@
 <%
     List<Subject> subjects = (List<Subject>) request.getAttribute("subjects");
     if (subjects == null) {
+
         subjects = Collections.emptyList();
+
     }
     String keyword = (String) request.getAttribute("keyword");
     if (keyword == null) {
@@ -41,7 +43,9 @@
         </thead>
         <tbody>
         <% for (Subject subject : subjects) { %>
+
             <tr>
+
                 <td><%= subject.getId() %></td>
                 <td><%= subject.getName() %></td>
                 <td><span class="pill"><%= subject.getCategory() %></span></td>

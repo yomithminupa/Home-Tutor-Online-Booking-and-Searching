@@ -24,15 +24,23 @@ public class PaymentService extends AbstractCrudService<Payment> {
         return new CardPayment(id, bookingId, userId, amount, paymentDate, status,
                 cardHolderName, maskedCardNumber, authorizationCode);
     }
+    @Override
+    public List<Payment> search(String keyword) {
+        if (keyword == null || keyword.isBlank()) {
+            return findAll();
+        }
+        String query = keyword.toLowerCase(Locale.ROOT);
+        return findAll().stream()
+                .filter(payment -> contains(payment.getId(), query)
+                        || contains(payment.getBookingId(), query)
+                        || contains(payment.getUserId(), query)
+                        || contains(payment.getStatus(), query)
+                        || contains(payment.getPaymentMethod(), query))
+                .toList();
+    }
+//method
 
-
-
-
-
-
-
-
-
-
-
+    private static boolean contains(String value, String query) {
+        return value != null && value.toLowerCase(Locale.ROOT).contains(query);
+    }
 }

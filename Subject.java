@@ -13,6 +13,7 @@ import jakarta.persistence.Table;
 @Table(name = "subjects")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "subject_category", discriminatorType = DiscriminatorType.STRING)
+// subject category implementation     
 public abstract class Subject implements IdentifiableEntity {
     @Id
     private String id;

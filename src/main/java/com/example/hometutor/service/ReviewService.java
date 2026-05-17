@@ -13,7 +13,11 @@ import java.util.Locale;
 @Service
 //create a class
 public class ReviewService extends AbstractCrudService<Review> {
+//parameterize constructor
+public ReviewService(ReviewRepository reviewRepository) {
 
+    super(reviewRepository);
+}
 
 
 

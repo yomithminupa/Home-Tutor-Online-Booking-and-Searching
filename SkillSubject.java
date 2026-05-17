@@ -5,6 +5,7 @@ import jakarta.persistence.Entity;
 
 @Entity
 @DiscriminatorValue("SKILL")
+// Skillsubject category implementation 
 public class SkillSubject extends Subject {
     private String skillLevel;
 

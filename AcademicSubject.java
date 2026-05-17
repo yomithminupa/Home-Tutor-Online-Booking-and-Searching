@@ -8,6 +8,7 @@ import jakarta.persistence.Entity;
 
 // Academic subject category implementation    
 public class AcademicSubject extends Subject {
+// Added stream attribute for academic subjects
     private String stream;
 
     public AcademicSubject() {

@@ -18,9 +18,34 @@ public ReviewService(ReviewRepository reviewRepository) {
 
     super(reviewRepository);
 }
-
-
-
+//method
+    public Review buildReview(String type, String id, String tutorId, String userId, int rating,
+                              String comment, String nickname, String bookingId) {
+        if ("VERIFIED".equalsIgnoreCase(type)) {
+            return new VerifiedReview(id, tutorId, userId, rating, comment, bookingId);
+        }
+        return new PublicReview(id, tutorId, userId, rating, comment, nickname);
+    }
+    //method overriding
+    @Override
+    public List<Review> search(String keyword) {
+        if (keyword == null || keyword.isBlank()) {
+            return findAll();
+        }
+        String query = keyword.toLowerCase(Locale.ROOT);
+        return findAll().stream()
+                .filter(review -> contains(review.getId(), query)
+                        || contains(review.getTutorId(), query)
+                        || contains(review.getUserId(), query)
+                        || contains(review.getComment(), query)
+                        || contains(review.getReviewType(), query))
+                .toList();
+    }
+//method
+    private static boolean contains(String value, String query) {
+        return value != null && value.toLowerCase(Locale.ROOT).contains(query);
+    }
+}
 
 
 

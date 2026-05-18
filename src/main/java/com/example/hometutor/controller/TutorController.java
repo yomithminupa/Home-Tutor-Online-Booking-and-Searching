@@ -72,13 +72,13 @@ public class TutorController  //Creates the controller class
     public String editForm(@PathVariable String id, Model model) 
     
     {
-        model.addAttribute("tutor", tutorService.findById(id).orElse(null));
-        return "tutor-form";
+        model.addAttribute("tutor", tutorService.findById(id).orElse(null)); //Find the corect tutor by ID nd send tutor details to user inteface 
+        return "tutor-form"; // Return edit form
     }
 
     @PostMapping("/edit/{id}")
     
-    public String update(@PathVariable String id, @RequestParam String type, @RequestParam String name,
+    public String update(@PathVariable String id, @RequestParam String type, @RequestParam String name, // Update Tutor
                          @RequestParam String email, @RequestParam String phone, @RequestParam String subject,
                          @RequestParam String qualification, @RequestParam String location,
                          @RequestParam String hourlyRate, @RequestParam String availability,

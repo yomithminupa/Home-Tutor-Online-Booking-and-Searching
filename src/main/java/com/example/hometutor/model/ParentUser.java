@@ -19,6 +19,7 @@ public class ParentUser extends User {
         this.childName = childName;
         this.address = address;
     }
+    
 //return user type
     @Override
     public String getUserType() {

@@ -59,7 +59,7 @@ keyword = "";
             <td>Rs. <%= payment.getAmount() %></td>
             <td><%= payment.getPaymentDate() %></td>
 
-            <%-- Wrap the status in a pill badge so it's easier to read at a glance. --%>
+            <%-- Wrap the  status in a pill badge so it's easier to read at a glance. --%>
             <td><span class="pill"><%= payment.getStatus() %></span></td>
 
             <td><%= payment.getPaymentMethod() %></td>

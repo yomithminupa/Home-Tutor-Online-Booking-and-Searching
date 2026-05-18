@@ -67,7 +67,7 @@ keyword = "";
             <td class="actions">
                 <a class="btn light" href="/payments/edit/<%= payment.getId() %>">Edit</a>
 
-                <%-- Show a confirm dialog before deleting so nobody wipes a payment by accident. --%>
+                <%-- Show  a confirm dialog before deleting so nobody wipes a payment by accident. --%>
                 <a class="btn danger" href="/payments/delete/<%= payment.getId() %>" onclick="return confirm('Delete this payment?')">Delete</a>
             </td>
         </tr>

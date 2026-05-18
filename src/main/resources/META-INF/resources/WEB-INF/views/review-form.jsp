@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="com.example.hometutor.model.*" %>
 
-<%-- pull thereview from the request and figure out if we're editing
+<%-- pull there view from the request and figure out if we're editing
      an existing one or creating a brand new one. --%>
 <%
     Review review = (Review) request.getAttribute("review");

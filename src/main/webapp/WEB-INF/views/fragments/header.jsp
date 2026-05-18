@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
+
+<%-- Shared header for all pages. Updated the brand name to Home Tutor Hub
+     and added emoji icons to each nav link to make it easier to scan. --%>
 <header class="topbar">
     <div class="brand">
         <h1><span class="logo-badge">&#127891;</span> Home Tutor Hub</h1>

@@ -2,7 +2,7 @@
 <%@ page import="java.util.*, com.example.hometutor.model.Payment" %>
 
 <%-- Grab the payments list from the request. If nothing came through,
-     just use an empty list so the page doesn't crash. --%>
+     just use an empty list so the page doesn't crash --%>
 <%
     List<Payment> payments = (List<Payment>) request.getAttribute("payments");
     if (payments == null) {

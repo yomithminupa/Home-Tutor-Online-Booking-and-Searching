@@ -1,14 +1,20 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="java.util.*, com.example.hometutor.model.Review" %>
+
+<%-- Grab the reviews list from the request. If nothing came through
+     just use an empty list so the page doesn't break. --%>
 <%
     List<Review> reviews = (List<Review>) request.getAttribute("reviews");
     if (reviews == null) {
         reviews = Collections.emptyList();
     }
-    String keyword = (String) request.getAttribute("keyword");
-    if (keyword == null) {
-        keyword = "";
-    }
+
+<%-- Keep the search keyword so the input stays filled after searching.
+     Defaults to empty string so the placeholder shows on a fresh load. --%>
+String keyword = (String) request.getAttribute("keyword");
+if (keyword == null) {
+keyword = "";
+}
 %>
 <%@ include file="fragments/header.jsp" %>
 
@@ -41,23 +47,34 @@
         </tr>
         </thead>
         <tbody>
+
+        <%-- Loop through each review and build a table row.
+             displayReview() handles how public and verified reviews
+             show differently without any extra logic here. --%>
         <% for (Review review : reviews) { %>
-            <tr>
-                <td><%= review.getId() %></td>
-                <td><span class="pill"><%= review.getReviewType() %></span></td>
-                <td><%= review.getTutorId() %></td>
-                <td><%= review.getUserId() %></td>
-                <td><%= review.getRating() %>/5</td>
-                <td><%= review.getComment() %></td>
-                <td><%= review.displayReview() %></td>
-                <td class="actions">
-                    <a class="btn light" href="/reviews/edit/<%= review.getId() %>">Edit</a>
-                    <a class="btn danger" href="/reviews/delete/<%= review.getId() %>" onclick="return confirm('Delete this review?')">Delete</a>
-                </td>
-            </tr>
+        <tr>
+            <td><%= review.getId() %></td>
+
+            <%-- Wrap the review type in a pill badge so
+                 PUBLIC and VERIFIED are easy to tell apart. --%>
+            <td><span class="pill"><%= review.getReviewType() %></span></td>
+
+            <td><%= review.getTutorId() %></td>
+            <td><%= review.getUserId() %></td>
+            <td><%= review.getRating() %>/5</td>
+            <td><%= review.getComment() %></td>
+            <td><%= review.displayReview() %></td>
+            <td class="actions">
+                <a class="btn light" href="/reviews/edit/<%= review.getId() %>">Edit</a>
+
+                <%-- Ask for confirmation before deleting so no one
+                     removes a review by accident. --%>
+                <a class="btn danger" href="/reviews/delete/<%= review.getId() %>" onclick="return confirm('Delete this review?')">Delete</a>
+            </td>
+        </tr>
         <% } %>
         <% if (reviews.isEmpty()) { %>
-            <tr><td colspan="8">No reviews found.</td></tr>
+        <tr><td colspan="8">No reviews found.</td></tr>
         <% } %>
         </tbody>
     </table>

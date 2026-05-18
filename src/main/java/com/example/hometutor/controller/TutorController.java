@@ -34,25 +34,26 @@ public class TutorController  //Creates the controller class
     
     @GetMapping //Handles GET requests
     
-    public String list(@RequestParam(required = false) String keyword, Model model) 
+    public String list(@RequestParam(required = false) String keyword, Model model) // Gets value from URL
     
     {
-        model.addAttribute("tutors", tutorService.search(keyword));
-        model.addAttribute("keyword", keyword == null ? "" : keyword);
-        return "tutors";
+        model.addAttribute("tutors", tutorService.search(keyword)); // Search available tutors
+        
+        model.addAttribute("keyword", keyword == null ? "" : keyword); // Handle null keyword
+        return "tutors"; // Return to user interface page
     }
 
+    // Open new tutor form
     @GetMapping("/new")
-    
     public String newForm() 
     
     {
-        return "tutor-form";
+        return "tutor-form";  // Return form page
     }
-
+    // Create new tutor 
     @PostMapping
     
-    public String create(@RequestParam String type, @RequestParam String id, @RequestParam String name,
+    public String create(@RequestParam String type, @RequestParam String id, @RequestParam String name,       // Receive form data     
                          @RequestParam String email, @RequestParam String phone, @RequestParam String subject,
                          @RequestParam String qualification, @RequestParam String location,
                          @RequestParam String hourlyRate, @RequestParam String availability,

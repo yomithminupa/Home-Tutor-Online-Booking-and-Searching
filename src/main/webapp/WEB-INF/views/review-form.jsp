@@ -1,5 +1,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="com.example.hometutor.model.*" %>
+<%-- Check if we are editing an existing review or adding a new one.
+     Pull out nickname or bookingId depending on the review type
+     and default both to empty string so the inputs stay clean. --%>
+
 <%
     Review review = (Review) request.getAttribute("review");
     boolean edit = review != null;

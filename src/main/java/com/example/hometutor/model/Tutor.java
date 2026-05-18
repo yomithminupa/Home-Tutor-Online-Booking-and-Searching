@@ -1,5 +1,5 @@
-package com.example.hometutor.model;
-
+package com.example.hometutor.model; 
+ 
 import jakarta.persistence.Column;
 import jakarta.persistence.DiscriminatorColumn;
 import jakarta.persistence.DiscriminatorType;

@@ -9,7 +9,7 @@
     int reviewCount = request.getAttribute("reviewCount") == null ? 0 : (Integer) request.getAttribute("reviewCount");
 %>
 <%@ include file="fragments/header.jsp" %>
-
+<%-- Page header section with title, subtitle, and quick-action buttons --%>
 <section class="page-head">
     <div>
         <h2>Dashboard</h2>
@@ -20,7 +20,7 @@
         <a class="btn secondary" href="/payments/new">New Payment</a>
     </div>
 </section>
-
+<%-- Stat cards grid: each card shows a module count and a navigation link --%>
 <section class="grid">
     <article class="card">
         <div class="muted">Registered Users</div>

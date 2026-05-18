@@ -64,7 +64,7 @@
             <option value="CASH" <%= "CASH".equals(paymentType) ? "selected" : "" %>>Cash Payment</option>
         </select>
     </label>
-        <%-- card and  cash fields are always shown on the form together.
+        <%-- card and cash fields are always shown on the form together.
        Making sure only the relevant ones are filled in is handled on the backend. --%>
     <label>Card Holder Name
         <input type="text" name="cardHolderName" value="<%= cardHolderName %>" placeholder="Only for card payments">

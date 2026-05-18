@@ -53,7 +53,7 @@
         <a class="btn light" href="/reviews">Open Reviews</a>
     </article>
 </section>
-
+<%-- Inline style used here temporarily; consider moving margin to stylesheet --%>
 <section class="card" style="margin-top: 18px;">
     <h3>Project Modules</h3>
     <p class="muted">Each module uses controller classes for web requests, service classes for business logic, model classes for OOP, and database tables for storage.</p>

@@ -2,7 +2,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="com.example.hometutor.model.Booking" %>
 <%
+    // Get booking object from request
     Booking booking = (Booking) request.getAttribute("booking");
+
+    // Check if this is edit mode or new booking mode
     boolean edit = booking != null;
 %>
 <%@ include file="fragments/header.jsp" %>

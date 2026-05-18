@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%-- Safely extract dashboard counts from request attributes with 0 as fallback --%>
 <%
     int userCount = request.getAttribute("userCount") == null ? 0 : (Integer) request.getAttribute("userCount");
     int tutorCount = request.getAttribute("tutorCount") == null ? 0 : (Integer) request.getAttribute("tutorCount");

@@ -1,9 +1,12 @@
 // IT25102587
 package com.example.hometutor.controller;
+
 // Import Booking model class
 import com.example.hometutor.model.Booking;
+
 // Import BookingService class
 import com.example.hometutor.service.BookingService;
+
 // Spring MVc imports
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,8 +15,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
 // Marks this class as a Spring MVC controller
 @Controller
+    
 // Base URL for all booking operations 
 @RequestMapping("/bookings")
 public class BookingController {
@@ -55,8 +60,10 @@ public class BookingController {
     // Open edit form using booking ID
     @GetMapping("/edit/{id}")
     public String editForm(@PathVariable String id, Model model) {
+        
         // Find booking and send to view 
         model.addAttribute("booking", bookingService.findById(id).orElse(null));
+        
         // Open booking-form.html page 
         return "booking-form";
     }
@@ -68,6 +75,7 @@ public class BookingController {
                          @RequestParam String status, @RequestParam String sessionType) {
         // Build update booking object
         Booking booking = bookingService.buildBooking(id, userId, tutorId, subject, bookingDate, bookingTime, location, status, sessionType);
+        
         // Update booking
         bookingService.update(booking);
         // Redirect to booking list page

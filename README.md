@@ -1,4 +1,4 @@
-# Home Tutor Search and Booking System
+## Home Tutor Search and Booking System
 
 SE1020 Object Oriented Programming project built with Java, Spring Boot, JSP pages, and SQL database storage.
 

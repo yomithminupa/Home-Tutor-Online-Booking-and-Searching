@@ -1,6 +1,6 @@
-package com.example.hometutor.model; // Defines the package location of the class
- 
-import jakarta.persistence.Column;  // These JPA annotations help to connect to java classes with database tables.
+package com.example.hometutor.model;
+
+import jakarta.persistence.Column;
 import jakarta.persistence.DiscriminatorColumn;
 import jakarta.persistence.DiscriminatorType;
 import jakarta.persistence.Entity;
@@ -9,27 +9,21 @@ import jakarta.persistence.Inheritance;
 import jakarta.persistence.InheritanceType;
 import jakarta.persistence.Table;
 
-@Entity   // Marks this class as a database entity
- 
-@Table(name = "tutors") 
+@Entity
+@Table(name = "tutors")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "tutor_type", discriminatorType = DiscriminatorType.STRING)
-    
-public abstract class Tutor implements IdentifiableEntity 
-{
+public abstract class Tutor implements IdentifiableEntity {
     @Id
-    
     private String id;
 
     @Column(nullable = false)
-    
     private String name;
 
     private String email;
     private String phone;
 
     @Column(nullable = false)
-    
     private String subject;
 
     private String qualification;
@@ -41,8 +35,7 @@ public abstract class Tutor implements IdentifiableEntity
     }
 
     protected Tutor(String id, String name, String email, String phone, String subject,
-                    String qualification, String location, double hourlyRate, String availability) 
-    {
+                    String qualification, String location, double hourlyRate, String availability) {
         this.id = id;
         this.name = name;
         this.email = email;
@@ -58,100 +51,82 @@ public abstract class Tutor implements IdentifiableEntity
 
     public abstract double calculateSessionFee(int hours);
 
-    public String displayCard()
-    {
+    public String displayCard() {
         return name + " teaches " + subject + " in " + location;
     }
 
     @Override
-    
-    public String getId() 
-    {
+    public String getId() {
         return id;
     }
 
-    public void setId(String id)
-    {
+    public void setId(String id) {
         this.id = id;
     }
 
-    public String getName() 
-    {
+    public String getName() {
         return name;
     }
 
-    public void setName(String name) 
-    {
+    public void setName(String name) {
         this.name = name;
     }
 
-    public String getEmail() 
-    {
+    public String getEmail() {
         return email;
     }
 
-    public void setEmail(String email) 
-    {
+    public void setEmail(String email) {
         this.email = email;
     }
 
-    public String getPhone() 
-    {
+    public String getPhone() {
         return phone;
     }
 
-    public void setPhone(String phone)
-    {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 
-    public String getSubject() 
-    {
+    public String getSubject() {
         return subject;
     }
 
-    public void setSubject(String subject) 
-    {
+    public void setSubject(String subject) {
         this.subject = subject;
     }
 
-    public String getQualification() 
-    {
+    public String getQualification() {
         return qualification;
     }
 
-    public void setQualification(String qualification) 
-    {
+    public void setQualification(String qualification) {
         this.qualification = qualification;
     }
 
-    public String getLocation() 
-    {
+    public String getLocation() {
         return location;
     }
 
-    public void setLocation(String location) 
-    {
+    public void setLocation(String location) {
         this.location = location;
     }
 
-    public double getHourlyRate() 
-    {
+    public double getHourlyRate() {
         return hourlyRate;
     }
 
-    public void setHourlyRate(double hourlyRate) 
-    {
+    public void setHourlyRate(double hourlyRate) {
         this.hourlyRate = hourlyRate;
     }
 
-    public String getAvailability() 
-    {
+    public String getAvailability() {
         return availability;
     }
 
-    public void setAvailability(String availability) 
-    {
+    public void setAvailability(String availability) {
         this.availability = availability;
     }
 }
+
+ 

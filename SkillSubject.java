@@ -2,11 +2,10 @@ package com.example.hometutor.model;
 
 import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
-// Marks this class as a database entity
-@Entity
 
-// Used to identify this subclass type in inheritance    
+@Entity
 @DiscriminatorValue("SKILL")
+// Skillsubject category implementation 
 public class SkillSubject extends Subject {
     private String skillLevel;
 

@@ -1,36 +1,49 @@
 // IT25102587
 package com.example.hometutor.model;
+
 // Import JPA annotations
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+
 // Marks this class as adatabase entity
 @Entity
+    
 // Maps this class to "Bookings" table   
 @Table(name = "bookings")
 public class Booking implements IdentifiableEntity {
+    
     // primary key
     @Id
     private String id;
+    
     // User ID cannot be null
     @Column(nullable = false)
     private String userId;
+    
     // Tutor ID cannot be null
     @Column(nullable = false)
     private String tutorId;
+    
     // Subject name
     private String subject;
+    
     // Booking date
     private String bookingDate;
+    
     // Booking time
     private String bookingTime;
+    
     // Session location
     private String location;
+    
     // Booking status
     private String status;
+    
     // Session type
     private String sessionType;
+    
     // Default constructor
     public Booking() {
     }

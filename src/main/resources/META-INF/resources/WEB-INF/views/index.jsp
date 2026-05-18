@@ -20,7 +20,7 @@
         <a class="btn secondary" href="/payments/new">New Payment</a>
     </div>
 </section>
-<%-- Stat cards grid: each card shows a module count and a navigation link --%>
+<%--  each card shows a module count and a navigation link --%>
 <section class="grid">
     <article class="card">
         <div class="muted">Registered Users</div>
@@ -53,8 +53,9 @@
         <a class="btn light" href="/reviews">Open Reviews</a>
     </article>
 </section>
-<%-- Inline style used here temporarily; consider moving margin to stylesheet --%>
+<%--  consider moving margin to stylesheet --%>
 <section class="card" style="margin-top: 18px;">
+    <%--  describes the architecture pattern used across all modules --%>
     <h3>Project Modules</h3>
     <p class="muted">Each module uses controller classes for web requests, service classes for business logic, model classes for OOP, and database tables for storage.</p>
     <div class="grid">

@@ -57,7 +57,6 @@
             <option value="REFUNDED" <%= editMode && "REFUNDED".equals(payment.getStatus()) ? "selected" : "" %>>Refunded</option>
         </select>
     </label>
-
     <label>Payment Type
         <select name="paymentType">
             <option value="CARD" <%= "CARD".equals(paymentType) ? "selected" : "" %>>Card Payment</option>

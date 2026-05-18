@@ -9,8 +9,8 @@ import jakarta.persistence.Inheritance;
 import jakarta.persistence.InheritanceType;
 import jakarta.persistence.Table;
 
-@Entity
-@Table(name = "tutors")
+@Entity   
+@Table(name = "tutors") 
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "tutor_type", discriminatorType = DiscriminatorType.STRING)
     

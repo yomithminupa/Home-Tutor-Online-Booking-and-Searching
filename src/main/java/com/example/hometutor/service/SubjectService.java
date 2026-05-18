@@ -15,12 +15,13 @@ public class SubjectService extends AbstractCrudService<Subject> {
     public SubjectService(SubjectRepository subjectRepository) {
         super(subjectRepository);
     }
-
+    // Build subject object according to category
     public Subject buildSubject(String category, String id, String name, String gradeLevel,
                                 String description, String stream, String skillLevel) {
         if ("SKILL".equalsIgnoreCase(category)) {
             return new SkillSubject(id, name, gradeLevel, description, skillLevel);
         }
+        // Otherwise create AcademicSubject object
         return new AcademicSubject(id, name, gradeLevel, description, stream);
     }
 

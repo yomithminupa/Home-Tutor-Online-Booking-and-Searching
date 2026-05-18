@@ -103,10 +103,11 @@ public class TutorController  //Creates the controller class
     private double parseDouble(String value) // Converts into double
     
     {
+        // Attempts conversion
         try {
             return Double.parseDouble(value);
-        } catch (Exception e) {
-            return 0;
+        } catch (Exception e) { // If inputs the invalid number, subsequently returns = 0
+            return 0; 
          }
         
     }

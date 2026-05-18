@@ -1,5 +1,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="java.util.*, com.example.hometutor.model.Payment" %>
+<%-- Load the payments list and search keyword from the request.
+     Both fall back to safe defaults so the page never breaks
+     on a fresh load or when the search comes back empty. --%>
+
 <%
     List<Payment> payments = (List<Payment>) request.getAttribute("payments");
     if (payments == null) {

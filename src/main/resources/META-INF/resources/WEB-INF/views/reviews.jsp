@@ -68,7 +68,7 @@ keyword = "";
                 <a class="btn light" href="/reviews/edit/<%= review.getId() %>">Edit</a>
 
                 <%-- Ask  for  confirmation before deleting so no one
-                     removes a review by accident. --%>
+                     removes  a review by accident. --%>
                 <a class="btn danger" href="/reviews/delete/<%= review.getId() %>" onclick="return confirm('Delete this review?')">Delete</a>
             </td>
         </tr>

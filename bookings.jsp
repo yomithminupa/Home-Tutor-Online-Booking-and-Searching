@@ -1,12 +1,19 @@
-//
+// Booking management page
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="java.util.*, com.example.hometutor.model.Booking" %>
 <%
+    // Get booking list from request
     List<Booking> bookings = (List<Booking>) request.getAttribute("bookings");
+
+    // If no booking found, create empty list
     if (bookings == null) {
         bookings = Collections.emptyList();
     }
+    // Get search keyword
     String keyword = (String) request.getAttribute("keyword");
+
+    // Set empty keyword if null
     if (keyword == null) {
         keyword = "";
     }

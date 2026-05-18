@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="com.example.hometutor.model.*" %>
+
 <%
     Tutor tutor = (Tutor) request.getAttribute("tutor");
     boolean edit = tutor != null;
@@ -8,7 +9,8 @@
     String travelFee = "";
     if (tutor instanceof OnlineTutor) {
         platform = ((OnlineTutor) tutor).getPlatform();
-    } else if (tutor instanceof HomeVisitTutor) {
+    } else if (tutor instanceof HomeVisitTutor)
+{
         travelFee = String.valueOf(((HomeVisitTutor) tutor).getTravelFee());
     }
 %>

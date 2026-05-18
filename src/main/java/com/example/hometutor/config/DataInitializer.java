@@ -1,23 +1,7 @@
 package com.example.hometutor.config;
 
-import com.example.hometutor.model.AcademicSubject;
-import com.example.hometutor.model.AdminUser;
-import com.example.hometutor.model.Booking;
-import com.example.hometutor.model.CardPayment;
-import com.example.hometutor.model.CashPayment;
-import com.example.hometutor.model.HomeVisitTutor;
-import com.example.hometutor.model.OnlineTutor;
-import com.example.hometutor.model.ParentUser;
-import com.example.hometutor.model.PublicReview;
-import com.example.hometutor.model.SkillSubject;
-import com.example.hometutor.model.StudentUser;
-import com.example.hometutor.model.VerifiedReview;
-import com.example.hometutor.repository.BookingRepository;
-import com.example.hometutor.repository.PaymentRepository;
-import com.example.hometutor.repository.ReviewRepository;
-import com.example.hometutor.repository.SubjectRepository;
-import com.example.hometutor.repository.TutorRepository;
-import com.example.hometutor.repository.UserRepository;
+import com.example.hometutor.model.*;
+import com.example.hometutor.repository.*;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 

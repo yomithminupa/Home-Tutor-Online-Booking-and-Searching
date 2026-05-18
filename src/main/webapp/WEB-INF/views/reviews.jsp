@@ -1,5 +1,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="java.util.*, com.example.hometutor.model.Review" %>
+<%-- Load the reviews list and search keyword from the request.
+     Both fall back to safe defaults so the page never breaks
+     on a fresh load or when no results come back. --%>
 <%
     List<Review> reviews = (List<Review>) request.getAttribute("reviews");
     if (reviews == null) {

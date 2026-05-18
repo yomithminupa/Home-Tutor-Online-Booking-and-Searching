@@ -4,6 +4,9 @@
     Payment payment = (Payment) request.getAttribute("payment");
     boolean editMode = payment != null;
     String action = editMode ? "/payments/edit/" + payment.getId() : "/payments";
+<%-- Pull payment type and any subclass fields out early so the form
+     below doesn't get cluttered with logic. Defaults to empty string
+     so nothing blows up if the field doesn't apply. --%>
     String paymentType = payment instanceof CashPayment ? "CASH" : "CARD";
     String cardHolderName = payment instanceof CardPayment ? ((CardPayment) payment).getCardHolderName() : "";
     String maskedCardNumber = payment instanceof CardPayment ? ((CardPayment) payment).getMaskedCardNumber() : "";
@@ -15,16 +18,18 @@
 
 <section class="page-head">
     <div>
+        <%-- Toggle form title and POST action URL between create and edit mode --%>
         <h2><%= editMode ? "Update Payment" : "Add Payment" %></h2>
         <p class="muted">Use card or cash payment details for a booking.</p>
     </div>
 </section>
 
 <form class="form-card" method="post" action="<%= action %>">
+    <%-- Payment ID is only shown in create mode; in edit mode the ID is fixed and not editable --%>
     <% if (!editMode) { %>
-        <label>Payment ID
-            <input type="text" name="id" required placeholder="P001">
-        </label>
+    <label>Payment ID
+        <input type="text" name="id" required placeholder="P001">
+    </label>
     <% } %>
 
     <label>Booking ID
@@ -45,6 +50,7 @@
 
     <label>Status
         <select name="status">
+            <%-- Conditionally pre-select the correct status option based on the existing payment record --%>
             <option value="PENDING" <%= editMode && "PENDING".equals(payment.getStatus()) ? "selected" : "" %>>Pending</option>
             <option value="PAID" <%= editMode && "PAID".equals(payment.getStatus()) ? "selected" : "" %>>Paid</option>
             <option value="FAILED" <%= editMode && "FAILED".equals(payment.getStatus()) ? "selected" : "" %>>Failed</option>
@@ -58,7 +64,8 @@
             <option value="CASH" <%= "CASH".equals(paymentType) ? "selected" : "" %>>Cash Payment</option>
         </select>
     </label>
-
+        <%-- Card and cash fields are always shown on the form together.
+       Making sure only the relevant ones are filled in is handled on the backend. --%>
     <label>Card Holder Name
         <input type="text" name="cardHolderName" value="<%= cardHolderName %>" placeholder="Only for card payments">
     </label>

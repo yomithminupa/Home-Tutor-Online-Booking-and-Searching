@@ -49,7 +49,7 @@ keyword = "";
         </thead>
         <tbody>
 
-        <%-- Loop through each payment and build a table row
+        <%-- Loop through each payment and build a table row.
              receiptSummary handles the difference between card and cash automatically. --%>
         <% for (Payment payment : payments) { %>
         <tr>

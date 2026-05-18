@@ -61,13 +61,13 @@ public class TutorController  //Creates the controller class
                          @RequestParam(required = false) String travelFee)
     
     {
-        Tutor tutor = tutorService.buildTutor(type, id, name, email, phone, subject, qualification,
+        Tutor tutor = tutorService.buildTutor(type, id, name, email, phone, subject, qualification,  // Build tutor object
                 location, parseDouble(hourlyRate), availability, platform, parseDouble(travelFee));
         tutorService.create(tutor);
-        return "redirect:/tutors";
+        return "redirect:/tutors";  //Redirect after saving
     }
 
-    @GetMapping("/edit/{id}")
+    @GetMapping("/edit/{id}") //Open edit form
     
     public String editForm(@PathVariable String id, Model model) 
     

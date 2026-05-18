@@ -87,20 +87,20 @@ public class TutorController  //Creates the controller class
     {
         Tutor tutor = tutorService.buildTutor(type, id, name, email, phone, subject, qualification,
                 location, parseDouble(hourlyRate), availability, platform, parseDouble(travelFee));
-        tutorService.update(tutor);
+        tutorService.update(tutor); // Create updated object and save updated data
         return "redirect:/tutors";
     }
 
     @GetMapping("/delete/{id}")
     
-    public String delete(@PathVariable String id) 
+    public String delete(@PathVariable String id) //Delete tutor (details)
     
     {
-        tutorService.delete(id);
-        return "redirect:/tutors";
+        tutorService.delete(id); // Delete operation
+        return "redirect:/tutors"; // Redirect after delete
     }
 
-    private double parseDouble(String value) 
+    private double parseDouble(String value) // Converts into double
     
     {
         try {

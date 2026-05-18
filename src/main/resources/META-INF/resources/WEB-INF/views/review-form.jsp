@@ -8,7 +8,7 @@
     boolean edit = review != null;
     String type = edit ? review.getReviewType() : "PUBLIC";
 
-<%-- Default nickname and bookingId to empty string so the form
+<%-- Default nicknameand bookingId to empty string so the form
      inputs don't throw an error when neither subclass is present. --%>
 String nickname = "";
 String bookingId = "";

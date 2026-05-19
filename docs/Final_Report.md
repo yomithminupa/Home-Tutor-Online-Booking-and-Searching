@@ -1,4 +1,12 @@
-# Home Tutor Project Presentation Call Script
+Member Contributions
+
+Member	Contribution Area	Main Work
+Member 1	Project Setup, Configuration, Dashboard, Login, Documentation	Created the Spring Boot project setup, configured Maven, database settings, H2/MySQL configuration, dashboard, admin login portal, shared CSS, documentation, and overall project structure.
+Member 2	User Management	Developed user model classes such as User, StudentUser, and AdminUser, implemented user CRUD operations, user repository, user service, user controller, and JSP pages for user management.
+Member 3	Tutor Management	Developed tutor model classes such as Tutor, OnlineTutor, and HomeVisitTutor, implemented tutor CRUD operations, tutor repository, tutor service, tutor controller, and tutor JSP pages.
+Member 4	Subject Management	Developed subject model classes such as Subject, AcademicSubject, and SkillSubject, implemented subject CRUD operations, subject repository, subject service, subject controller, and subject JSP pages.
+Member 5	Booking Management	Developed booking model, booking repository, booking service, booking controller, booking JSP pages, and dropdown-based booking form for selecting users, tutors, subjects, and locations.
+Member 6	Payment and Review Management	Developed payment and review model classes, implemented payment and review CRUD operations, repositories, services, controllers, and JSP pages.# Home Tutor Project Presentation Call Script
 
 ## Member 1: Introduction, Technologies, and Architecture
 

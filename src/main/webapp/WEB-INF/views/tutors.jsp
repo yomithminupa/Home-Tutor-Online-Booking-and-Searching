@@ -1,6 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="java.util.*, com.example.hometutor.model.Tutor" %>
-
 <%
     List<Tutor> tutors = (List<Tutor>) request.getAttribute("tutors");
     if (tutors == null) {
@@ -11,7 +10,6 @@
         keyword = "";
     }
 %>
-
 <%@ include file="fragments/header.jsp" %>
 
 <section class="page-head">

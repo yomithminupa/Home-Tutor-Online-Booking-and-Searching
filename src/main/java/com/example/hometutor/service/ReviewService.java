@@ -1,3 +1,4 @@
+//create package
 package com.example.hometutor.service;
 
 import com.example.hometutor.model.PublicReview;
@@ -10,12 +11,14 @@ import java.util.List;
 import java.util.Locale;
 
 @Service
+//create a class
 public class ReviewService extends AbstractCrudService<Review> {
+//parameterize constructor
+public ReviewService(ReviewRepository reviewRepository) {
 
-    public ReviewService(ReviewRepository reviewRepository) {
-        super(reviewRepository);
-    }
-
+    super(reviewRepository);
+}
+//method
     public Review buildReview(String type, String id, String tutorId, String userId, int rating,
                               String comment, String nickname, String bookingId) {
         if ("VERIFIED".equalsIgnoreCase(type)) {
@@ -23,7 +26,7 @@ public class ReviewService extends AbstractCrudService<Review> {
         }
         return new PublicReview(id, tutorId, userId, rating, comment, nickname);
     }
-
+    //method overriding
     @Override
     public List<Review> search(String keyword) {
         if (keyword == null || keyword.isBlank()) {
@@ -38,8 +41,20 @@ public class ReviewService extends AbstractCrudService<Review> {
                         || contains(review.getReviewType(), query))
                 .toList();
     }
-
+//method
     private static boolean contains(String value, String query) {
         return value != null && value.toLowerCase(Locale.ROOT).contains(query);
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+

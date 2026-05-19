@@ -12,13 +12,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 @RequestMapping("/reviews")
+//create a class
 public class ReviewController {
     private final ReviewService reviewService;
-
+//constructor
     public ReviewController(ReviewService reviewService) {
         this.reviewService = reviewService;
     }
-
+    //  list with search, create, edit, update, and delete
     @GetMapping
     public String list(@RequestParam(required = false) String keyword, Model model) {
         model.addAttribute("reviews", reviewService.search(keyword));
@@ -62,13 +63,14 @@ public class ReviewController {
         reviewService.delete(id);
         return "redirect:/reviews";
     }
-
-    private int parseInt(String value) {
-        try {
-            int number = Integer.parseInt(value);
-            return Math.max(1, Math.min(5, number));
-        } catch (Exception e) {
-            return 1;
-        }
+// create method
+private int parseInt(String value) {
+    try {
+        int number = Integer.parseInt(value);
+        return Math.max(1, Math.min(5, number));
+    } catch (Exception e) {
+        return 1;
     }
 }
+}
+

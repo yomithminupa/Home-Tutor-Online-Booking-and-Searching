@@ -1,3 +1,4 @@
+//create a package
 package com.example.hometutor.service;
 
 import com.example.hometutor.model.CardPayment;
@@ -10,12 +11,14 @@ import java.util.List;
 import java.util.Locale;
 
 @Service
+//create a class
 public class PaymentService extends AbstractCrudService<Payment> {
-
+    //parameterize constructor
     public PaymentService(PaymentRepository paymentRepository) {
+
         super(paymentRepository);
     }
-
+    //method
     public Payment buildPayment(String id, String bookingId, String userId, double amount, String paymentDate,
                                 String status, String paymentType, String cardHolderName, String maskedCardNumber,
                                 String authorizationCode, String collectedBy, String receiptNumber) {
@@ -40,6 +43,7 @@ public class PaymentService extends AbstractCrudService<Payment> {
                         || contains(payment.getPaymentMethod(), query))
                 .toList();
     }
+//method
 
     private static boolean contains(String value, String query) {
         return value != null && value.toLowerCase(Locale.ROOT).contains(query);

@@ -1,4 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
+<%-- Pull all six module counts from the request and default to 0
+     so the dashboard still loads cleanly even if the controller
+     didn't send any data through. --%>
 <%
     int userCount = request.getAttribute("userCount") == null ? 0 : (Integer) request.getAttribute("userCount");
     int tutorCount = request.getAttribute("tutorCount") == null ? 0 : (Integer) request.getAttribute("tutorCount");

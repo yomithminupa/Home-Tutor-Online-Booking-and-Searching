@@ -1,5 +1,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="com.example.hometutor.model.Payment, com.example.hometutor.model.CardPayment, com.example.hometutor.model.CashPayment" %>
+<%-- Check the payment type and pull out the subclass fields early.
+     Everything defaults to empty string so the form inputs
+     don't break when a field doesn't apply to that payment type. --%>
 <%
     Payment payment = (Payment) request.getAttribute("payment");
     boolean editMode = payment != null;

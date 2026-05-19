@@ -2,12 +2,15 @@
 <%
     String title = (String) request.getAttribute("title");
     String message = (String) request.getAttribute("message");
-    if (title == null || title.isBlank()) {
-        title = "Error";
-    }
-    if (message == null || message.isBlank()) {
-        message = "Please go back and try again.";
-    }
+
+<%-- Fall back to generic error text if the controller didn't
+     send a title or message through with the request. --%>
+if (title == null || title.isBlank()) {
+title = "Error";
+}
+if (message == null || message.isBlank()) {
+message = "Please go back and try again.";
+}
 %>
 <%@ include file="fragments/header.jsp" %>
 

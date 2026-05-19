@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
+
+<%-- Shared header included across all pages. Contains the site title
+     and navigation links to every module in the system. --%>
 <header class="topbar">
     <div class="brand">
         <h1>Home Tutor Search and Booking System</h1>

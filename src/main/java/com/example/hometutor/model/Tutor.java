@@ -1,6 +1,6 @@
-package com.example.hometutor.model; 
+package com.example.hometutor.model; // Defines the package location of the class
 
-import jakarta.persistence.Column;
+import jakarta.persistence.Column; // These JPA annoatations help tot connect to java class with database tables
 import jakarta.persistence.DiscriminatorColumn;
 import jakarta.persistence.DiscriminatorType;
 import jakarta.persistence.Entity;
@@ -9,8 +9,10 @@ import jakarta.persistence.Inheritance;
 import jakarta.persistence.InheritanceType;
 import jakarta.persistence.Table;
 
-@Entity
-@Table(name = "tutors")
+@Entity // Marks this class as a database entity
+    
+@Table(name = "tutors") // Maps this class to the database table
+    
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "tutor_type", discriminatorType = DiscriminatorType.STRING)
 public abstract class Tutor implements IdentifiableEntity {

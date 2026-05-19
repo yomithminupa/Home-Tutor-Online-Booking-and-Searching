@@ -14,8 +14,9 @@ import jakarta.persistence.Table;
 @Table(name = "tutors") // Maps this class to the database table
     
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name = "tutor_type", discriminatorType = DiscriminatorType.STRING)
+@DiscriminatorColumn(name = "tutor_type", discriminatorType = DiscriminatorType.STRING) // Creates a special column
 public abstract class Tutor implements IdentifiableEntity {
+    
     @Id
     private String id;
 

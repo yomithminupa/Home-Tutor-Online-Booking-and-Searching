@@ -15,9 +15,9 @@ import jakarta.persistence.Table;
     
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "tutor_type", discriminatorType = DiscriminatorType.STRING) // Creates a special column
-public abstract class Tutor implements IdentifiableEntity {
+public abstract class Tutor implements IdentifiableEntity { // // Only subclasses could create objects
     
-    @Id
+    @Id // Primary key of the database table
     private String id;
 
     @Column(nullable = false)
